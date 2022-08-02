@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexa Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand" href="/"><img src="img/logo.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li><li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <main class="my-5">
+      <div class="container">
+        <form>
+          <div class="row gy-1">
+            <aside class="col-12 col-lg-3">
+              <div class="filters">
+                  <h4>Filters</h4>
+                  <div class="search filter-param">
+                    <input type="text" class="onType border-0 shadow rounded-1 p-1" placeholder="Search">
+                    <button id="submitBtn" type="submit" class="border-0 shadow rounded-1 px-3 py-1 ms-2">Go</button>
+                  </div>
+                  <div class="filter-param">
+                    <label for="company">Company</label>
+                    <select name="company" id="company" class="onType border-0 shadow rounded-1 p-1">
+                      <option value="all">All</option>
+                      <option value="liddy">Liddy</option>
+                      <option value="caressa">Caressa</option>
+                      <option value="ikea">Ikea</option>
+                      <option value="marcos">Marcos</option>
+                    </select>
+                  </div>
+                  <div class="Price filter-param">
+                    <label for="Price">Price</label>
+                    <div class="price-selectors row align-items-center">
+                      <div class="col-3 col-sm-1 col-lg-3">
+                        <label for="from">From:</label>
+                      </div>
+                      <div class="col-9 col-sm-11 col-lg-9">
+                        <input type="number" id="from" class="onType border-0 shadow rounded-1 ms-2">
+                      </div>
+                    </div>
+                    <div class="price-selectors row align-items-center">
+                      <div class="col-3 col-sm-1 col-lg-3">
+                        <label for="To">To:</label>
+                      </div>
+                      <div class="col-9 col-sm-11 col-lg-9">
+                        <input type="number" id="To" class="onType border-0 shadow rounded-1 ms-2">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-param">
+                    <label for="featured">Featured</label>
+                    <select name="featured" id="featured" class="onType border-0 shadow rounded-1 p-1">
+                      <option value="all">All</option>
+                      <option value="true">True</option>
+                      <option value="false">False</option>
+                    </select>
+                  </div>
+                  <div class="filter-param">
+                    <label for="moreThan">Ratings</label>
+                    <div class="price-selectors row align-items-center">
+                      <div class="col-3 col-sm-1 col-lg-3">
+                        <label for="moreThan">More than:</label>
+                      </div>
+                      <div class="col-9 col-sm-11 col-lg-9">
+                        <input type="number" id="moreThan" class="onType border-0 shadow rounded-1 ms-2" step="0.1">
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </aside>
+            <section class="main col-12 col-lg-9">
+              <div class="results">
+                <header class="sort-bar">
+                  <span>Total Products found</span>
+                  <span class="straight-line"></span>
+                  <span>
+                    <label for="sort">Sort By:</label>
+                    <select name="sort" id="sort" class="onType border-0 p-1 rounded-1">
+                      <option value="all">None</option>
+                      <option value="price">Price Asc</option>
+                      <option value="-price">Price Des</option>
+                      <option value="rating">Ratings Asc</option>
+                      <option value="-rating">Ratings Des</option>
+                      <option value="name">Name Asc</option>
+                      <option value="-name">Name Des</option>
+                    </select>
+                  </span>
+                </header>
+                <section class="content">
+                  <header>
+                    <div class="row gx-2">
+                      <div class="col-1"><div>S.No.</div></div>
+                      <div class="col-3"><div>Name</div></div>
+                      <div class="col-2"><div>Company</div></div>
+                      <div class="col-2"><div>Featured</div></div>
+                      <div class="col-2"><div>Ratings</div></div>
+                      <div class="col-2"><div>Price</div></div>
+                    </div>
+                  </header>
+                  <div id="content">
+  
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+          <footer class="container mt-3 d-flex justify-content-center">
+            <div class="pageCon font-weight-bold d-flex justify-content-around">
+              <span>Page</span>
+              <input id="page1" type="submit" class="pageno border-0" value="1"/>
+              <input id="page2" type="submit" class="pageno border-0" value="2"/>
+              <input id="page3" type="submit" class="pageno border-0" value="3"/>
+            </div>
+          </footer>
+        </form>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+
+</body>
+</html>
