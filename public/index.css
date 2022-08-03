@@ -204,4 +204,10 @@ select:focus {
   background-color: #373737;
   color: #e2e2e2;
 }
+
+select, input {
+  -webkit-box-shadow: 3px 5px 5px 5px rgba(142, 141, 137, 0.25);
+          box-shadow: 3px 5px 5px 5px rgba(142, 141, 137, 0.25);
+  background-color: #fefefe;
+}
 /*# sourceMappingURL=index.css.map */
